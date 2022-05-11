@@ -19,7 +19,8 @@ const Login = () => {
         password,
       });
       //! token
-      token = result;
+      token = result.data.token;
+      console.log(token)
       setToken(result.data.token);
       localStorage.setItem("token", token);
       console.log(token);
