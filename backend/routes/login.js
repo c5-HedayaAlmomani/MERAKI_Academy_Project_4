@@ -6,6 +6,6 @@ const login = require("../controllers/login");
 const authentication = require("../middleware/authentication");
 const isAdmin = require("../middleware/isAdmin");
 
-loginRouter.post("/", authentication, isAdmin, login);
+loginRouter.post("/",  login);
 
 module.exports = loginRouter;

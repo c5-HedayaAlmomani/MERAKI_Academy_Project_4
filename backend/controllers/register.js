@@ -12,13 +12,19 @@ const register = (req, res) => {
   user
     .save()
     .then((result) => {
-      res.json(result);
+      res.json({success: true, message: "You are logged in successfully" , result:result});
     })
     .catch((err) => {
       if (err.code == 11000) {
         res.json({ success: false, message: "The email already exists" });
-      } else {
-        res.json(err);
+      }
+      if(err.message.includes('Cast to Boolean')){
+res.json({success: false, message:"IsAdmin must be true or false"})
+      }
+      
+      
+      else {
+        res.json({success: false, message:"Server Error" ,err:err});
       }
     });
 };

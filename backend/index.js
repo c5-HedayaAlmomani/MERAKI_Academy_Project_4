@@ -25,6 +25,9 @@ app.use("/product" , productRouter)
 const orderRouter = require("../backend/routes/order")
 app.use("/order" , orderRouter)
 
+// cart router
+const cartRouter = require("../backend/routes/cart")
+app.use("/cart" , cartRouter)
 // Routes Middleware
 
 // Handles any other endpoints [unassigned - endpoints]

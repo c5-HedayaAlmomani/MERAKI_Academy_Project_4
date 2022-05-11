@@ -14,6 +14,7 @@ const authentication = (req, res, next) => {
   jwt.verify(token, secret, (err, result) => {
       //! important statement
     req.user = result
+    req.token = result 
 
     if (err) {
       res.status(403).json({

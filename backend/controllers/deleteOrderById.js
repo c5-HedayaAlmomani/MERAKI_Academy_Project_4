@@ -1,7 +1,14 @@
-const deleteOrderById = (req ,res)=>{
+const orderSchema = require("../models/OrderSchema");
 
-res.json("uuuuuuuuuuu")
+const deleteOrderById = (req, res) => {
+  const id = req.params.id;
 
+  orderSchema.findByIdAndDelete(id, (err, result) => {
+    if (err) {
+      res.json("the id is not correct");
+    }
 
-}
-module.exports= deleteOrderById ;
+    res.json("the order deleted");
+  });
+};
+module.exports = deleteOrderById;
