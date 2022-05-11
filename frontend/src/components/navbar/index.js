@@ -46,7 +46,7 @@ const Navbar = () => {
 
         <Route path="/product" element={<Product />} />
 
-        <Route path="/product/:category" element={<ProByCat />} />
+        <Route path="/product/:category" element={< ProByCat />} />
       </Routes>
     </div>
   );

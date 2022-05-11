@@ -4,11 +4,10 @@ const getProdCategory = (req, res) => {
   const category = req.params.category;
 
   productSchema
-    .find()
-    .then((result) => {
-      const product = result.filter((element, index) => {
-        return element.categories == category;
-      });
+    .find({
+      categories: `${category}`,
+    })
+    .then((product) => {
       if (product.length == 0) {
         res.json("There are no products for this category");
       } else {
