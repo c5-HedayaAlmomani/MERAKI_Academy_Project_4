@@ -15,7 +15,8 @@ const Register = () => {
       <div className="div">
         <fieldset className="bordersignup">
           <legend>SIGN_UP</legend>
-          <label>Enter your name</label><br />
+          <label>Enter your name</label>
+          <br />
           <input
             placeholder="User Name"
             className="uname"
@@ -25,7 +26,8 @@ const Register = () => {
           />
 
           <br />
-          <label>Enter your email</label><br />
+          <label>Enter your email</label>
+          <br />
           <input
             placeholder="Email"
             className="email"
@@ -34,7 +36,8 @@ const Register = () => {
             }}
           />
           <br />
-          <label>Enter your Password</label><br />
+          <label>Enter your Password</label>
+          <br />
           <input
             placeholder="Password"
             className="password"
@@ -44,7 +47,8 @@ const Register = () => {
           />
 
           <br />
-          <label>Register as a Admin</label><br />
+          <label>Register as a Admin</label>
+          <br />
           <input
             placeholder="Is Admin"
             className="isAdmin"
@@ -72,11 +76,11 @@ const Register = () => {
                   {}
                 )
                 .then((result) => {
-                  setMessage(result.data.message)
+                  setMessage(result.data.message);
                   console.log(result.data);
                 })
                 .catch((err) => {
-                  setMessage(err.data.message)
+                  setMessage(err.data.message);
                   console.log(err.data);
                 });
             }}
