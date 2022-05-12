@@ -24,8 +24,8 @@ const Login = () => {
       setToken(result.data.token);
       localStorage.setItem("token", token);
       console.log(token);
-      isLoggedIn = true;
-      setIsLoggedIn(true);
+      // isLoggedIn = true;
+      // setIsLoggedIn(true);
 
       setMessage(result.data.message);
      

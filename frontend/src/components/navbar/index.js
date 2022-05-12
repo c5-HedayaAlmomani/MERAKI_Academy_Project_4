@@ -4,21 +4,20 @@ import Register from "../Register";
 import React, { useContext } from "react";
 import { UserContext } from "../../App";
 import Product from "../products";
-import GetOreders from "../Orders"
-import ProByCat from "../productByCategory"
+import GetOreders from "../Order/Orders";
+import ProByCat from "../productByCategory/productByCategory";
 const Navbar = () => {
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
   //! category= women , men , baby , boys , girls
 
-
-
+  localStorage.token ? setIsLoggedIn(true) : setIsLoggedIn(false);
 
   return (
     <div>
       navbar
       {/* <Product /> */}
-      < GetOreders/>
+      <GetOreders />
       {!isLoggedIn && (
         <Link to="/login" className="link">
           login
@@ -29,24 +28,21 @@ const Navbar = () => {
           register
         </Link>
       )}
-         {isLoggedIn && (
-        <Link to="/product" className="link">
-          Product
-        </Link>
-      )}
-      
-        <Link to="product/woman">Women</Link>
-        <Link to="product/men">Men</Link>
-        <Link to="product/baby">Baby</Link>
-        <Link to="product/boys">Boys</Link>
-        <Link to="product/girls">Girls</Link>
+      <Link to="/product" className="link">
+        Product
+      </Link>
+      <Link to="product/woman">Women</Link>
+      <Link to="product/men">Men</Link>
+      <Link to="product/baby">Baby</Link>
+      <Link to="product/boys">Boys</Link>
+      <Link to="product/girls">Girls</Link>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
         <Route path="/product" element={<Product />} />
 
-        <Route path="/product/:category" element={< ProByCat />} />
+        <Route path="/product/:category" element={<ProByCat />} />
       </Routes>
     </div>
   );
