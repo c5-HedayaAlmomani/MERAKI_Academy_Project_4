@@ -24,7 +24,9 @@ const ProByCat = () => {
   return (
     <div>
       {productsC.map((e, i) => {
-        return <div>{e.title}</div>;
+        return <div>{e.title}
+        <img src={"./"} alt="icons" />
+        </div>;
       })}
     </div>
   );
