@@ -8,7 +8,7 @@ import GetOreders from "../Orders"
 import ProByCat from "../productByCategory"
 const Navbar = () => {
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
-
+  const Navigate = useNavigate();
   //! category= women , men , baby , boys , girls
 
 
@@ -35,7 +35,7 @@ const Navbar = () => {
         </Link>
       )}
       
-        <Link to="product/women">Women</Link>
+        <Link to="product/woman">Women</Link>
         <Link to="product/men">Men</Link>
         <Link to="product/baby">Baby</Link>
         <Link to="product/boys">Boys</Link>
