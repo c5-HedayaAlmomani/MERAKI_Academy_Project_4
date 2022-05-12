@@ -1,11 +1,19 @@
 const productSchema = require("../models/ProductSchema");
 const createNewProduct = (req, res) => {
-  const { title, description, img, categories,type, size, color, price } = req.body;
+  const { title, description, categories, type,img , size, color, price } = req.body;
+
   const product = new productSchema({
-    title, description, img, categories,type, size, color, price 
+    title,
+    description,
+    img,
+    categories,
+    type,
+    size,
+    color,
+    price,
   });
 
- product
+  product
     .save()
     .then((result) => {
       res.status(201).json({
