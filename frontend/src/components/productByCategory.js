@@ -3,27 +3,33 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const ProByCat = () => {
-  const [productsC, setProductsC] = useState([]);
+  let [productsC, setProductsC] = useState([]);
   const { category } = useParams();
 
   // func for git product By category
+
   const func = () => {
     axios
       .get(`http://localhost:5000/product/${category}`)
       .then((result) => {
-        console.log("======================");
-        console.log(result);
         setProductsC(result.data);
       })
       .catch((err) => {
         console.log(err);
       });
-      
   };
 
-  useEffect(func, []);
+  useEffect(func, [{ category }]);
 
-  return <div>{category}</div>;
+  return (
+    <div>
+      {productsC.map((e, i) => {
+        return <div>{e.title}</div>;
+      })}
+    </div>
+  );
 };
 
 export default ProByCat;
+
+//!======================================
