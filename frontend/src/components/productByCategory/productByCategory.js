@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import m from "../productByCategory/r.jpeg";
 
 const ProByCat = () => {
   let [productsC, setProductsC] = useState([]);
@@ -24,9 +25,13 @@ const ProByCat = () => {
   return (
     <div>
       {productsC.map((e, i) => {
-        return <div>{e.title}
-        <img src={"./"} alt="icons" />
-        </div>;
+        return (
+          <div>
+            {e.title}
+
+            <img src={`${e.img}` + ""} />
+          </div>
+        );
       })}
     </div>
   );
