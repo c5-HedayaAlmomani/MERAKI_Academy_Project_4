@@ -28,7 +28,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div className="App">
-      <h1>Hello world</h1>
+     
       <UserContext.Provider
         value={{ token, setToken, isLoggedIn, setIsLoggedIn }}
       >

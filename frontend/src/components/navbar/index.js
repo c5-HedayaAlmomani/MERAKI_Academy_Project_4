@@ -1,4 +1,5 @@
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import "../navbar/style.css";
 import Login from "../Login";
 import Register from "../Register";
 import React, { useContext } from "react";
@@ -15,27 +16,43 @@ const Navbar = () => {
 
   return (
     <div>
-      navbar
-      {/* <Product /> */}
-      <GetOreders />
-      {!isLoggedIn && (
-        <Link to="/login" className="link">
-          login
-        </Link>
-      )}
-      {!isLoggedIn && (
-        <Link to="/register" className="link">
-          register
-        </Link>
-      )}
-      <Link to="/product" className="link">
-        Product
-      </Link>
-      <Link to="product/woman">Women</Link>
-      <Link to="product/men">Men</Link>
-      <Link to="product/baby">Baby</Link>
-      <Link to="product/boys">Boys</Link>
-      <Link to="product/girls">Girls</Link>
+      {/* <div></div> */}
+
+      <div className="navbar">
+        <div className="section1">
+          <Link to="/product" className="link">
+            Product
+          </Link>
+          <Link className="link" to="product/woman">
+            Women
+          </Link>
+          <Link className="link" to="product/men">
+            Men
+          </Link>
+          <Link className="link" to="product/baby">
+            Baby
+          </Link>
+          <Link className="link" to="product/boys">
+            Boys
+          </Link>
+          <Link className="link" to="product/girls">
+            Girls
+          </Link>
+        </div>
+        <div className="section1">
+          {/* <GetOreders /> */}
+          {!isLoggedIn && (
+            <Link className="link" to="/login">
+              login
+            </Link>
+          )}
+          {!isLoggedIn && (
+            <Link to="/register" className="link">
+              register
+            </Link>
+          )}
+        </div>
+      </div>
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

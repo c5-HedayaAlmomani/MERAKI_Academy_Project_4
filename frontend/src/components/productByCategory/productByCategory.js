@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import m from "../productByCategory/r.jpeg";
+import "../productByCategory/style.css";
+// import m from "../productByCategory/r.jpeg";
 
 const ProByCat = () => {
   let [productsC, setProductsC] = useState([]);
@@ -23,13 +24,12 @@ const ProByCat = () => {
   useEffect(func, [{ category }]);
 
   return (
-    <div>
+    <div className="product">
       {productsC.map((e, i) => {
         return (
-          <div>
+          <div className="oneProduct">
+            <img className="img" src={`${e.img}` + ""} />
             {e.title}
-
-            <img src={`${e.img}` + ""} />
           </div>
         );
       })}
