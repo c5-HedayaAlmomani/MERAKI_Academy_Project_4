@@ -5,10 +5,10 @@ const cartSchema = new mongoose.Schema({
 
   productId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Products Model" , required:true
+    ref: "Products Model" , required:true , unique:true
   },
   quantity: { type: Number, default: 1 },
-
+color :{type:String , }
   //total
 });
 

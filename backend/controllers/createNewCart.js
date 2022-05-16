@@ -3,11 +3,13 @@ const createNewCart = (req, res) => {
   const userId = req.token.id;
 
   const productId = req.body.productId;
-  const quantity = req.body.quantity
+  const quantity = req.body.quantity;
+  const color = req.body.color;
   const cart = new cartSchema({
     userId:userId,
     productId:productId,
     quantity:quantity,
+    color:color
   });
   cart
     .save()

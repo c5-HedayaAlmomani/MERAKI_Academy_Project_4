@@ -1,15 +1,17 @@
 import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import { UserContext } from "../App";
 
 const OneProduct = () => {
+  const DropDownHeader = styled("div")``;
+
   const [newProduct, setNewProduct] = useState([]);
   const [quantity, setQuantity] = useState(0);
-
+  const [color, setColor] = useState("");
   const { id } = useParams();
-  let { arrCart, setArrCart, token, setToken, isLoggedIn, setIsLoggedIn } =
-    useContext(UserContext);
+  let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
 
   const func = () => {
     axios
@@ -25,7 +27,6 @@ const OneProduct = () => {
   useEffect(func, []);
   //!=======================
   const addToCart = (p) => {
-    // console.log(p)
     axios
       .post("http://localhost:5000/cart", p, {
         headers: {
@@ -61,15 +62,34 @@ const OneProduct = () => {
         return (
           <div className="oneProduct">
             <img className="img" src={`${e.img}` + ""} />
+            <h>{e.color}</h>
             {e.title}
             <h>{e.type}</h>
+            <h>color</h>
+            <select
+              onChange={function () {
+                setColor(e.target.value);
+              }}
+            >
+              {e.color.map((element) => {
+                return <option value={element}>{element}</option>;
+              })}
+            </select>
+            //!====================
+            <h>size</h>
+            <select>
+              {e.size.map((element) => {
+                return <option>{element}</option>;
+              })}
+            </select>
             {/* //!   هون رح اسويها  */}
             <button
               className="addCart"
               onClick={() =>
                 addToCart({
                   productId: e._id,
-                  "quantity":quantity
+                  quantity: quantity,
+                  color: color,
                 })
               }
             >

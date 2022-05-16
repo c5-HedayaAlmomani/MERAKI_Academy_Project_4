@@ -26,23 +26,6 @@ const Cart = () => {
   useEffect(getCarts, []);
   //!=====================
 
-  // const getCarts = () => {
-  //   axios
-  //     .get("http://localhost:5000/cart", {
-  //       headers: {
-  //         authorization: "Bearer " + token,
-  //       },
-  //     })
-  //     .then((result) => {
-  //       setarrOfPoducts(result.data[0].products);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // useEffect(getCarts, []);
-
   return (
     <div>
       <h5>CART</h5>;
