@@ -8,7 +8,8 @@ const cartSchema = new mongoose.Schema({
     ref: "Products Model" , required:true , unique:true
   },
   quantity: { type: Number, default: 1 },
-color :{type:String , }
+color :{type:String ,default:"black" },
+size:{type:String ,default:"L" }
   //total
 });
 

@@ -9,6 +9,7 @@ import GetOreders from "../Order/Orders";
 import ProByCat from "../productByCategory/productByCategory";
 import OneProduct from "../oneProduct";
 import Cart from "../cart/cart";
+import Order from "../Login/order/order";
 const Navbar = () => {
   
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
@@ -48,6 +49,7 @@ const Navbar = () => {
           </Link>
           <Link  to="oneProduct/:id">
             <Link to="/cart">cart</Link>
+            <Link to="/order">Order</Link>
            
           </Link>
         </div>
@@ -74,6 +76,7 @@ const Navbar = () => {
         <Route path="/product/:category" element={<ProByCat />} />
         <Route path="oneProduct/:id" element={<OneProduct /> } />
         <Route path="/cart" element={< Cart />} ></Route>
+        <Route path= "/order" element={<Order />}></Route>
       </Routes>
     </div>
   );

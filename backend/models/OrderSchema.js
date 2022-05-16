@@ -1,19 +1,15 @@
-const { type } = require("express/lib/response");
+
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-  userId: { type: String, required: true },
-  products: [
-    {
-      productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Products Model",
-      },
-      quantity: { type: Number,default:1  }
-    },
-  ],
+  userId: { type:mongoose.Schema.Types.ObjectId , ref:"User Model" , required: true },
 
-  address: { type: Object, required: true },
+  cartId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Cart Model",
+  },
+ 
+  address: { type: Object,  },
 });
 
 module.exports = mongoose.model("Order Model", orderSchema);

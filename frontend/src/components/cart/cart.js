@@ -25,6 +25,22 @@ const Cart = () => {
   };
   useEffect(getCarts, []);
   //!=====================
+  const addOrder = (p) => {
+    axios
+      .post("http://localhost:5000/order", p, {
+        headers: {
+          authorization: "Bearer " + token,
+        },
+      })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  //!=====================
 
   return (
     <div>
@@ -40,6 +56,20 @@ const Cart = () => {
             <h>{e.productId.size}</h>
             <h>{e.productId.title}</h>
             <h>{e.quantity}</h>
+            <h>{e._id}</h>
+            <br />
+            <h>{e.productId._id}</h>
+            <button
+              onClick={() => {
+                addOrder({
+                  cartId: e._id,
+
+                  userId: e.userId,
+                });
+              }}
+            >
+              ADD ORDER
+            </button>
           </div>
         );
       })}

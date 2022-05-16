@@ -5,11 +5,13 @@ const createNewCart = (req, res) => {
   const productId = req.body.productId;
   const quantity = req.body.quantity;
   const color = req.body.color;
+  const size = req.body.size
   const cart = new cartSchema({
-    userId:userId,
-    productId:productId,
-    quantity:quantity,
-    color:color
+    userId: userId,
+    productId: productId,
+    quantity: quantity,
+    color: color,
+    size:size
   });
   cart
     .save()

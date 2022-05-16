@@ -5,11 +5,12 @@ import styled from "styled-components";
 import { UserContext } from "../App";
 
 const OneProduct = () => {
-  const DropDownHeader = styled("div")``;
+
 
   const [newProduct, setNewProduct] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [color, setColor] = useState("");
+  const [size , setSize]=useState("");
   const { id } = useParams();
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
 
@@ -52,6 +53,9 @@ const OneProduct = () => {
   };
   //!=======================
 
+
+  //!========================
+
   return (
     <div>
       <button onClick={reduceQuantity}>-</button>
@@ -62,24 +66,27 @@ const OneProduct = () => {
         return (
           <div className="oneProduct">
             <img className="img" src={`${e.img}` + ""} />
-            <h>{e.color}</h>
+            {/* <h>{e.color}</h> */}
             {e.title}
             <h>{e.type}</h>
+            <h>{e.price}</h>
             <h>color</h>
             <select
-              onChange={function () {
+              onChange={function (e) {
                 setColor(e.target.value);
               }}
             >
               {e.color.map((element) => {
-                return <option value={element}>{element}</option>;
+                return <option value={element+''}>{element}</option>;
               })}
             </select>
             //!====================
             <h>size</h>
-            <select>
+            <select onChange={function(e){
+              setSize(e.target.value)
+            }}>
               {e.size.map((element) => {
-                return <option>{element}</option>;
+                return <option value={element+''}>{element}</option>;
               })}
             </select>
             {/* //!   هون رح اسويها  */}
@@ -90,11 +97,13 @@ const OneProduct = () => {
                   productId: e._id,
                   quantity: quantity,
                   color: color,
+                  size:size
                 })
               }
             >
               Add to cart
             </button>
+            
           </div>
         );
       })}

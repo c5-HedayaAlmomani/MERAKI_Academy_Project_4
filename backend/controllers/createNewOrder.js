@@ -1,10 +1,10 @@
 const orderSchema = require("../models/OrderSchema");
 const createNewOrder = (req, res) => {
-  const { products, address } = req.body;
-  const userId = req.user.id;
+  const { cartId, address } = req.body;
+  const userId = req.token.id;
 
   const order = new orderSchema({
-    products,
+    cartId,
 
     address,
     userId,
