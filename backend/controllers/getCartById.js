@@ -2,11 +2,11 @@ const cartSchema = require("../models/CartSchema");
 
 const getCartById = (req, res) => {
   const id = req.token.id;
-  const products = req.body.products;
+  
 
   cartSchema
-    .find({userId
-      :id}).populate('products.productId')
+    .find({ userId: id })
+    .populate("productId")
     .then((result) => {
       res.json(result);
     })

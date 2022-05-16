@@ -1,12 +1,9 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 import React, { useState, createContext } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import OneProduct from "./components/oneProduct";
 export const UserContext = createContext();
-
-
-
 
 function App() {
   const DropDownContainer = styled("div")``;
@@ -37,15 +34,20 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //? const [arrCart , setArrCart] = useState({products:[]})
-  const [arrCart , setArrCart] = useState([])
+  const [arrCart, setArrCart] = useState([]);
   return (
     <div className="App">
-     
       <UserContext.Provider
-        value={{ token, setToken, isLoggedIn, setIsLoggedIn , arrCart , setArrCart }}
+        value={{
+          token,
+          setToken,
+          isLoggedIn,
+          setIsLoggedIn,
+          arrCart,
+          setArrCart,
+        }}
       >
         <Navbar />
-        
       </UserContext.Provider>
       //! new for imges
       {/* <div>
@@ -61,22 +63,20 @@ function App() {
           <img src={url} />
         </div>
       </div> */}
-      //! new for imges
-      //!==========
+      //! new for imges //!==========
       <div className="App">
-      <h1>Custom Select/dropdown</h1>
-      <DropDownContainer>
-        <DropDownHeader>Mangoes</DropDownHeader>
-        <DropDownListContainer>
-          <DropDownList>
-            <ListItem>Mangoes</ListItem>
-            <ListItem>Apples</ListItem>
-            <ListItem>Oranges</ListItem>
-          </DropDownList>
-        </DropDownListContainer>
-      </DropDownContainer>
-    </div>
-    
+        <h1>Custom Select/dropdown</h1>
+        <DropDownContainer>
+          <DropDownHeader>Mangoes</DropDownHeader>
+          <DropDownListContainer>
+            <DropDownList>
+              <ListItem>Mangoes</ListItem>
+              <ListItem>Apples</ListItem>
+              <ListItem>Oranges</ListItem>
+            </DropDownList>
+          </DropDownListContainer>
+        </DropDownContainer>
+      </div>
     </div>
   );
 }

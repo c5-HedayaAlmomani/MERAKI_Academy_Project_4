@@ -5,10 +5,10 @@ const upCartByUserId = (req, res) => {
 
   cartSchema
     // .updateOne(
-      .findOneAndUpdate(
+    .findOneAndUpdate(
       { userId: id },
       // {$push:{productId:req.body.productId}},
-      {products : req.body.products},
+      { products: req.body.products },
 
       { new: true }
     )

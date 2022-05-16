@@ -1,13 +1,14 @@
 const cartSchema = require("../models/CartSchema");
 const createNewCart = (req, res) => {
-  const userId = req.user.id;
+  const userId = req.token.id;
 
-  const products = req.body.products;
-
+  const productId = req.body.productId;
+  const quantity = req.body.quantity
   const cart = new cartSchema({
-    userId,
-    products,
-  })
+    userId:userId,
+    productId:productId,
+    quantity:quantity,
+  });
   cart
     .save()
     .then((result) => {
