@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: row;
     width: 99%;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
-background-color: aqua;
+background-color: rgb(241, 145, 201);
 margin: -8px 0px ;
 padding:  10px ;
 
@@ -19,4 +19,7 @@ padding:  10px ;
     font-style: oblique;
     margin: 0px 20px ;
 
+}
+.section {
+    margin: 0px 20px;
 }

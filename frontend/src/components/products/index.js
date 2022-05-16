@@ -35,17 +35,18 @@ const Product = () => {
           <div className="oneProduct">
             <img className="img" src={`${e.img}` + ""} />
             {e.title}
-            <h>{e.description}</h>
+            <h>{e.type}</h>
+            {/* <h>{e.description}</h>
             <h>{e.categories}</h>
-            <h>{e.price}</h>
+            <h>{e.price}</h> */}
 
-            {e.color.map((element) => {
+            {/* {e.color.map((element) => {
               return <h>{element}</h>;
             })}
             {e.size.map((element) => {
               return <h>{element}</h>;
-            })}
-            {/* <img src={element.img}  /> */}
+            })} */}
+          
           </div>
         );
       })}

@@ -28,6 +28,10 @@ app.use("/order" , orderRouter)
 // cart router
 const cartRouter = require("../backend/routes/cart")
 app.use("/cart" , cartRouter)
+
+// one product router
+const oneProductRouter = require("./routes/oneProduct")
+app.use("/oneProduct" , oneProductRouter)
 // Routes Middleware
 
 // Handles any other endpoints [unassigned - endpoints]

@@ -1,10 +1,19 @@
 import "./App.css";
 import Navbar from "./components/navbar";
 import React, { useState, createContext } from "react";
-import axios from "axios";
+import styled from 'styled-components';
+import OneProduct from "./components/oneProduct";
 export const UserContext = createContext();
 
+
+
+
 function App() {
+  const DropDownContainer = styled("div")``;
+  const DropDownHeader = styled("div")``;
+  const DropDownListContainer = styled("div")``;
+  const DropDownList = styled("ul")``;
+  const ListItem = styled("li")``;
   //! new for imges
   // const [image, setImage] = useState("");
   // const [url, setUrl] = useState("");
@@ -26,13 +35,17 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
   //! isLoggedIn variable
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //? const [arrCart , setArrCart] = useState({products:[]})
+  const [arrCart , setArrCart] = useState([])
   return (
     <div className="App">
      
       <UserContext.Provider
-        value={{ token, setToken, isLoggedIn, setIsLoggedIn }}
+        value={{ token, setToken, isLoggedIn, setIsLoggedIn , arrCart , setArrCart }}
       >
         <Navbar />
+        
       </UserContext.Provider>
       //! new for imges
       {/* <div>
@@ -49,6 +62,21 @@ function App() {
         </div>
       </div> */}
       //! new for imges
+      //!==========
+      <div className="App">
+      <h1>Custom Select/dropdown</h1>
+      <DropDownContainer>
+        <DropDownHeader>Mangoes</DropDownHeader>
+        <DropDownListContainer>
+          <DropDownList>
+            <ListItem>Mangoes</ListItem>
+            <ListItem>Apples</ListItem>
+            <ListItem>Oranges</ListItem>
+          </DropDownList>
+        </DropDownListContainer>
+      </DropDownContainer>
+    </div>
+    
     </div>
   );
 }
