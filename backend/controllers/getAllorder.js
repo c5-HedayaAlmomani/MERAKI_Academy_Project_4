@@ -1,10 +1,15 @@
 const OrderSchema = require("../models/OrderSchema");
 
 const getAllorder = (req, res) => {
-  const id = req.user.id;
+  const id = req.token.id;
   OrderSchema.find({ userId: id })
-  .populate('products.productId')
-    
+    .populate({
+      path: "cartId",
+      populate: {
+        path: "productId",
+      },
+    })
+
     .then((result) => {
       res.json(result);
     })
