@@ -1,31 +1,3 @@
-// import React, { useState, useEffect, useContext } from "react";
-// import axios from "axios";
-// import { UserContext } from "../../App"
-// const GetOreders = () => {
-//   const GetAllOrders = async () => {
-//     let token = useContext(UserContext).token;
-//     try {
-//       const result = await axios.get("http://localhost:5000/order", {
-//         headers: {
-//           authorization: "Bearer " + token,
-//         },
-//       });
-
-//       console.log(result);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       {/* <GetAllOrders /> */}
-//     </div>
-//   );
-// };
-
-// export default GetOreders;
-//!==========
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 
@@ -72,14 +44,6 @@ const Order = () => {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          console.log(orderArr);
-        }}
-      >
-        hedaya
-      </button>
-
       {orderArr.map((e) => {
         return (
           <div>
@@ -102,7 +66,6 @@ const Order = () => {
 
       <div>
         {orderArr.forEach((e) => {
-          // setTotal(total+Math.floor(e.cartId.productId.price[0]+e.cartId.productId.price[1]))
           x =
             x +
             (total +

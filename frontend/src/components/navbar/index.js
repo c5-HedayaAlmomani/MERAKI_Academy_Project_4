@@ -11,7 +11,6 @@ import OneProduct from "../oneProduct";
 import Cart from "../cart/cart";
 import Order from "../Order/Orders";
 const Navbar = () => {
-  
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
   //! category= women , men , baby , boys , girls
@@ -24,10 +23,8 @@ const Navbar = () => {
 
       <div className="navbar">
         <div className="section">
-
-        {/* OneProduct */}
-        {/* <OneProduct /> */}
-
+          {/* OneProduct */}
+          {/* <OneProduct /> */}
 
           <Link to="/product" className="link">
             Product
@@ -47,10 +44,9 @@ const Navbar = () => {
           <Link className="link" to="product/girls">
             Girls
           </Link>
-          <Link  to="oneProduct/:id">
+          <Link to="oneProduct/:id">
             <Link to="/cart">cart</Link>
             <Link to="/order">Order</Link>
-           
           </Link>
         </div>
         <div className="section">
@@ -74,9 +70,9 @@ const Navbar = () => {
         <Route path="/product" element={<Product />} />
 
         <Route path="/product/:category" element={<ProByCat />} />
-        <Route path="oneProduct/:id" element={<OneProduct /> } />
-        <Route path="/cart" element={< Cart />} ></Route>
-        <Route path= "/order" element={<Order />}></Route>
+        <Route path="oneProduct/:id" element={<OneProduct />} />
+        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/order" element={<Order />}></Route>
       </Routes>
     </div>
   );
