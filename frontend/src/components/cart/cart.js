@@ -5,7 +5,7 @@ import { UserContext } from "../../App";
 const Cart = () => {
   let [arrOfPoducts, setarrOfPoducts] = useState([]);
   let { token, setToken } = useContext(UserContext);
-
+  let [address, setAddress] = useState("");
   //!====================
 
   const getCarts = () => {
@@ -41,6 +41,21 @@ const Cart = () => {
   };
 
   //!=====================
+  const deleteCart = (id) => {
+    axios
+      .delete(`http://localhost:5000/cart/${id}`, {
+        headers: { authorization: "Bearer " + token },
+      })
+      .then((result) => {
+        console.log(result);
+        getCarts();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  //!=====================
 
   return (
     <div>
@@ -59,16 +74,29 @@ const Cart = () => {
             <h>{e._id}</h>
             <br />
             <h>{e.productId._id}</h>
+            <input
+              onChange={(e) => {
+                setAddress(e.target.value);
+              }}
+            />
             <button
               onClick={() => {
                 addOrder({
                   cartId: e._id,
 
                   userId: e.userId,
+                  address: address,
                 });
               }}
             >
               ADD ORDER
+            </button>
+            <button
+              onClick={() => {
+                deleteCart(e._id);
+              }}
+            >
+              DELETE
             </button>
           </div>
         );

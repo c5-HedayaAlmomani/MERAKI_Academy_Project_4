@@ -11,7 +11,7 @@ const orderRouter = express.Router();
 orderRouter.post("/",authentication , createNewOrder);
 orderRouter.get("/",authentication , getAllorder)
 orderRouter.put("/:id" ,authentication, updateOrderById)
-orderRouter.delete("/:id" ,authentication, deleteOrderById )
+orderRouter.delete("/:id" , deleteOrderById )
 
 module.exports = orderRouter ;
 

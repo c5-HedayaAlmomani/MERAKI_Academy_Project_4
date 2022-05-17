@@ -9,7 +9,7 @@ import GetOreders from "../Order/Orders";
 import ProByCat from "../productByCategory/productByCategory";
 import OneProduct from "../oneProduct";
 import Cart from "../cart/cart";
-import Order from "../Login/order/order";
+import Order from "../Order/Orders";
 const Navbar = () => {
   
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
