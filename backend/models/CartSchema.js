@@ -9,7 +9,7 @@ const cartSchema = new mongoose.Schema({
   },
   quantity: { type: Number, default: 1 },
 color :{type:String ,default:"black" },
-size:{type:String ,default:"L" }
+size:{type:String ,default:"M" }
   //total
 });
 

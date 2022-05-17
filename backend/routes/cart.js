@@ -12,6 +12,6 @@ cartRouter.get("/",authentication , getCartById) ;
 cartRouter.post("/" , authentication , createNewCart)
 
 cartRouter.put("/" , authentication,upCartByUserId)
-cartRouter.delete("/",  authentication,deletCart )
+cartRouter.delete("/:id",  deletCart )
 
 module.exports = cartRouter ;
