@@ -6,6 +6,7 @@ const Cart = () => {
   let [arrOfPoducts, setarrOfPoducts] = useState([]);
   let { token, setToken } = useContext(UserContext);
   let [address, setAddress] = useState("");
+  let [arrProduct, setArrProduct] = useState([]);
   //!====================
 
   const getCarts = () => {
@@ -17,7 +18,6 @@ const Cart = () => {
       })
       .then((result) => {
         setarrOfPoducts(result.data);
-        // console.log(result.data)
       })
       .catch((err) => {
         console.log(err);
@@ -55,6 +55,22 @@ const Cart = () => {
       });
   };
 
+  //!=====================
+  // const getAllProdect = () => {
+  //   axios
+  //     .get("http://localhost:5000/product", {
+  //       headers: {
+  //         authorization: "bearer " + token,
+  //       },
+  //     })
+  //     .then((result) => {
+  //       console.log(result.data.products);
+  //       setArrProduct(result.data.products);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   //!=====================
 
   return (
@@ -101,6 +117,7 @@ const Cart = () => {
           </div>
         );
       })}
+      {/* <button onClick={getAllProdect()}>HHHHHHHHHH</button> */}
     </div>
   );
 };

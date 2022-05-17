@@ -5,7 +5,6 @@ import Register from "../Register";
 import React, { useContext } from "react";
 import { UserContext } from "../../App";
 import Product from "../products";
-import GetOreders from "../Order/Orders";
 import ProByCat from "../productByCategory/productByCategory";
 import OneProduct from "../oneProduct";
 import Cart from "../cart/cart";
@@ -19,13 +18,8 @@ const Navbar = () => {
 
   return (
     <div>
-      {/* <div></div> */}
-
       <div className="navbar">
         <div className="section">
-          {/* OneProduct */}
-          {/* <OneProduct /> */}
-
           <Link to="/product" className="link">
             Product
           </Link>
@@ -50,7 +44,6 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="section">
-          {/* <GetOreders /> */}
           {!isLoggedIn && (
             <Link className="link" to="/login">
               login

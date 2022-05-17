@@ -44,6 +44,7 @@ const Order = () => {
 
   return (
     <div>
+      <h1>hello</h1>
       {orderArr.map((e) => {
         return (
           <div>
@@ -76,6 +77,7 @@ const Order = () => {
 
         <h1>{"Total Price :" + x + " $"}</h1>
       </div>
+
     </div>
   );
 };
