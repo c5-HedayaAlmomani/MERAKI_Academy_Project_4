@@ -1,7 +1,7 @@
 const cartSchema = require("../models/CartSchema");
 
 const deletCart = (req, res) => {
-  const id = req.body.id;
+  const id = req.params.id;
 
   cartSchema
     .findByIdAndDelete(id)
