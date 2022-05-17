@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState, useContext, useEffect } from "react";
 import { UserContext } from "../../App";
+//!++++++++++
+// import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
 
 const Cart = () => {
   let [arrOfPoducts, setarrOfPoducts] = useState([]);
@@ -72,6 +74,26 @@ const Cart = () => {
   //     });
   // };
   //!=====================
+  const componentDidMount = () => {
+    // if true I can access  geolocation properties
+    if ("geolocation" in navigator) {
+      console.log("Available");
+
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          console.log(position);
+          console.log("Latitude is :", position.coords.latitude);
+          console.log("Longitude is :", position.coords.longitude);
+        },
+        function (error) {
+          console.error("Error Code = " + error.code + " - " + error.message);
+        }
+      );
+    } else {
+      console.log("Not Available");
+    }
+  };
+  //!=====================
 
   return (
     <div>
@@ -80,16 +102,14 @@ const Cart = () => {
         return (
           <div>
             <img className="img" src={`${e.productId.img}` + ""} />
-            <h>{e.productId.title}</h>
-            <h>{e.productId.description}</h>
-            <h>{e.productId.color}</h>
-            <h>{e.productId.type}</h>
-            <h>{e.productId.size}</h>
-            <h>{e.productId.title}</h>
-            <h>{e.quantity}</h>
-            <h>{e._id}</h>
-            <br />
-            <h>{e.productId._id}</h>
+            <h5>{e.productId.title}</h5>
+            <h5>{e.productId.description}</h5>
+            <h5>{"color" + e.color}</h5>
+            <h5>{e.productId.type}</h5>
+            <h5>{"size:  " + e.size}</h5>
+            <h5>{e.productId.title}</h5>
+            <h5>{"quantity:  " + e.quantity}</h5>
+
             <input
               onChange={(e) => {
                 setAddress(e.target.value);
@@ -117,7 +137,13 @@ const Cart = () => {
           </div>
         );
       })}
-      {/* <button onClick={getAllProdect()}>HHHHHHHHHH</button> */}
+      <button
+        onClick={() => {
+          componentDidMount();
+        }}
+      >
+        location
+      </button>
     </div>
   );
 };
