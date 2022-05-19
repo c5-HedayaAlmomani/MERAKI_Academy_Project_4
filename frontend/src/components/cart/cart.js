@@ -1,14 +1,17 @@
 import axios from "axios";
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect,Component } from "react";
 import { UserContext } from "../../App";
-//!++++++++++
+import "./style.css"
+//!£££££££££££££££££££££££££££££location
+
 // import { Map, GoogleApiWrapper, Marker  } from 'google-maps-react';
+
 
 const Cart = () => {
   let [arrOfPoducts, setarrOfPoducts] = useState([]);
-  let { token, setToken } = useContext(UserContext);
+  let { token} = useContext(UserContext);
   let [address, setAddress] = useState("");
-  let [arrProduct, setArrProduct] = useState([]);
+  // let [arrProduct, setArrProduct] = useState([]);
   //!====================
 
   const getCarts = () => {
@@ -74,11 +77,13 @@ const Cart = () => {
   //     });
   // };
   //!=====================
+ //?  npm install google-maps-react
+  //!££££££££££££££££££££££££££££££££££ location
   const componentDidMount = () => {
     // if true I can access  geolocation properties
     if ("geolocation" in navigator) {
       console.log("Available");
-
+// to get position properties 
       navigator.geolocation.getCurrentPosition(
         function (position) {
           console.log(position);
@@ -95,26 +100,30 @@ const Cart = () => {
   };
   //!=====================
 
+  //!=====================
+
   return (
     <div>
       <h5>CART</h5>;
       {arrOfPoducts.map((e) => {
         return (
-          <div>
-            <img className="img" src={`${e.productId.img}` + ""} />
-            <h5>{e.productId.title}</h5>
-            <h5>{e.productId.description}</h5>
-            <h5>{"color" + e.color}</h5>
-            <h5>{e.productId.type}</h5>
-            <h5>{"size:  " + e.size}</h5>
-            <h5>{e.productId.title}</h5>
-            <h5>{"quantity:  " + e.quantity}</h5>
+          <div className="cart">
+            <img className="imgc" src={`${e.productId.img}` + ""} />
+            <div className="information">
+            <h2>{e.productId.title}</h2>
+            <h5>{"Description: "+e.productId.description}</h5>
+            <h5>{"Color: " + e.color}</h5>
+            {/* <h5>{e.productId.type}</h5> */}
+            <h5>{"Size:  " + e.size}</h5>
+            
+            <h5>{"Quantity:  " + e.quantity}</h5>
 
-            <input
+            <h3>Location: </h3><input
               onChange={(e) => {
                 setAddress(e.target.value);
               }}
             />
+            <br />
             <button
               onClick={() => {
                 addOrder({
@@ -127,6 +136,7 @@ const Cart = () => {
             >
               ADD ORDER
             </button>
+           
             <button
               onClick={() => {
                 deleteCart(e._id);
@@ -135,12 +145,12 @@ const Cart = () => {
               DELETE
             </button>
           </div>
+          </div>
         );
       })}
+      
       <button
-        onClick={() => {
-          componentDidMount();
-        }}
+      
       >
         location
       </button>

@@ -6,9 +6,10 @@ import React, { useContext } from "react";
 import { UserContext } from "../../App";
 import Product from "../products";
 import ProByCat from "../productByCategory/productByCategory";
-import OneProduct from "../oneProduct";
+import OneProduct from "../oneProduct/oneProduct";
 import Cart from "../cart/cart";
 import Order from "../Order/Orders";
+import Home from "../home/home";
 const Navbar = () => {
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
@@ -20,6 +21,7 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <div className="section">
+          <Link to="/" className="link">Home</Link>
           <Link to="/product" className="link">
             Product
           </Link>
@@ -39,8 +41,9 @@ const Navbar = () => {
             Girls
           </Link>
           <Link to="oneProduct/:id">
-            <Link to="/cart">cart</Link>
-            <Link to="/order">Order</Link>
+            <Link to="/cart" className="link">cart</Link>
+            <Link to="/order" className="link">Order</Link>
+            {/* <Link to="/location">location</Link> */}
           </Link>
         </div>
         <div className="section">
@@ -66,6 +69,9 @@ const Navbar = () => {
         <Route path="oneProduct/:id" element={<OneProduct />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
+        
+        <Route path="/" element={<Home />}></Route>
+      
       </Routes>
     </div>
   );

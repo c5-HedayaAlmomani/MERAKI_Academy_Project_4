@@ -1,0 +1,44 @@
+.cart {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-rows: 500px ;
+    grid-template-areas: "img inf";
+    background-color: rgb(255, 255, 255);
+ 
+}
+
+.imgc {
+    grid-area: img;
+    height: 100%;
+    width: 60%;
+    
+}
+
+.information {
+    grid-area: inf;
+    size: 100px;
+    
+}
+.information h5{
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    margin: 6%;
+    font-style: oblique;
+    font-weight: 900;
+    
+    
+}
+.information input {
+    background-color: rgb(223, 226, 226);
+    width: 220px;
+    height: 30px;
+}
+
+.information button {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border-radius: 9px;
+    height: 30px;
+    margin: 10px;
+    width: 100px;
+}
