@@ -4,7 +4,8 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
-import GoogleLogin from "react-google-login";
+import LogGoogle from "../logGoogle/LogGoogle";
+// import GoogleLogin from "react-google-login";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -66,7 +67,8 @@ const Login = () => {
         </button>
         <br />
         <p className="message">{message}</p>
-        <GoogleLogin />
+        < LogGoogle />
+        {/* <GoogleLogin /> */}
       </fieldset>
     </div>
   );
