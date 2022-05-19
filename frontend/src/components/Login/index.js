@@ -4,6 +4,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
+import GoogleLogin from "react-google-login";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -24,11 +25,11 @@ const Login = () => {
       setToken(result.data.token);
       localStorage.setItem("token", token);
       console.log(token);
-      // isLoggedIn = true;
-      // setIsLoggedIn(true);
+     
+      setIsLoggedIn(true);
 
       setMessage(result.data.message);
-     
+     Navigate("/")
     } catch (error) {
       setMessage(error.response.data.message);
       throw error;
@@ -65,6 +66,7 @@ const Login = () => {
         </button>
         <br />
         <p className="message">{message}</p>
+        <GoogleLogin />
       </fieldset>
     </div>
   );

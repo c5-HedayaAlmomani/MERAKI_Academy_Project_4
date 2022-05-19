@@ -1,10 +1,16 @@
-.cart {
+.cart_order {
     display: grid;
     grid-template-columns: 60% auto;
     grid-template-rows: 500px ;
     grid-template-areas: "img inf";
     background-color: rgb(255, 255, 255);
  
+}
+.myCart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: oblique;
 }
 
 .imgc {
@@ -42,3 +48,4 @@
     margin: 10px;
     width: 100px;
 }
+

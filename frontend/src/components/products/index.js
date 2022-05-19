@@ -29,13 +29,13 @@ const Product = () => {
   }, []);
 
   return (
-    <div className="product">
+    <div className="products">
       {products.map((e, i) => {
         return (
           <div className="oneProduct">
-            <img className="img" src={`${e.img}` + ""} />
-            {e.title}
-            <h>{e.type}</h>
+            <img className="allimg" src={`${e.img}` + ""} />
+            <h>{e.title}</h>
+            <h>{e.description}</h>
           </div>
         );
       })}

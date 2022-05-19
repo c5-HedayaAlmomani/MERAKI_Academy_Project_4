@@ -1,17 +1,21 @@
-/* .img {
-    height: 370px;
-    width: 370 px;
-    margin: 20px;
-} */
-/* .product {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-flex-wrap: wrap;
+.products {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  justify-content: center;
+}
+.allimg {
+  width: 70%;
+  height: 70%;
+}
+.oneProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.oneProduct{
-    display: flex;
-    flex-direction: column;
-    width: 380px;
-} */
+.oneProduct h {
+  font-style: oblique;
+
+  font-weight: 1000;
+}

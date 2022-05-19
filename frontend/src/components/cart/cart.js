@@ -103,11 +103,11 @@ const Cart = () => {
   //!=====================
 
   return (
-    <div>
-      <h5>CART</h5>;
+    <div >
+      <h1 className="myCart"> MY CART</h1>
       {arrOfPoducts.map((e) => {
         return (
-          <div className="cart">
+          <div className="cart_order">
             <img className="imgc" src={`${e.productId.img}` + ""} />
             <div className="information">
             <h2>{e.productId.title}</h2>

@@ -32,11 +32,9 @@ function App() {
       >
         <Navbar />
         {/* <Map /> */}
-        
       </UserContext.Provider>
       <GoogleLogin
         clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
-        
         buttonText="Login"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}

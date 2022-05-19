@@ -30,19 +30,20 @@ const ProByCat = () => {
   //!======================
 
   return (
-    <div className="product">
+    <div className="products">
       {productsC.map((e, i) => {
         return (
           <div className="oneProduct">
             <img
-              className="img"
+              className="allimg"
               src={`${e.img}` + ""}
               onClick={() => {
                 navigate(`/oneProduct/${e._id}`);
               }}
             />
-            {e.title}
-            <h>{e.type}</h>
+            <h>{e.title}</h>
+
+            <h>{e.description}</h>
           </div>
         );
       })}
