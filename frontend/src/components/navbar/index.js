@@ -21,7 +21,9 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <div className="section">
-          <Link to="/" className="link">Home</Link>
+          <Link to="/" className="link">
+            Home
+          </Link>
           <Link to="/product" className="link">
             Product
           </Link>
@@ -40,11 +42,15 @@ const Navbar = () => {
           <Link className="link" to="product/girls">
             Girls
           </Link>
-          <Link to="oneProduct/:id">
-            <Link to="/cart" className="link">cart</Link>
-            <Link to="/order" className="link">Order</Link>
-            {/* <Link to="/location">location</Link> */}
+          {/* <Link className="link"  to="oneProduct/:id"> */}
+          <Link className="link" to="/cart">
+            cart
           </Link>
+          <Link className="link" to="/order">
+            Order
+          </Link>
+
+          {/* </Link> */}
         </div>
         <div className="section">
           {!isLoggedIn && (
@@ -69,9 +75,8 @@ const Navbar = () => {
         <Route path="oneProduct/:id" element={<OneProduct />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
-        
+
         <Route path="/" element={<Home />}></Route>
-      
       </Routes>
     </div>
   );
