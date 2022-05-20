@@ -1,20 +1,29 @@
 import { GoogleLogin } from "react-google-login";
 import { useNavigate } from "react-router-dom";
+import React, { useContext } from "react";
+import { UserContext } from "../../App";
+import axios from "axios";
 const LogGoogle = () => {
+  let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
   const responseGoogle = (response) => {
     console.log(response);
-    //   console.log(response.Lu.tf);
 
-    //   console.log(response.Lu.Bv);
-    //   console.log(response.Lu.TW);
-    //   console.log(response.Lu);
-
-    //       username: response.Lu.tf,
-    //       email: response.Lu.Bv,
-    //       password: response.Lu.TW,
-    //       isAdmin: false,
-    //     }
+    axios
+      .post("http://localhost:5000/login/google", {
+        username: response.Lu.tf,
+        email: response.Lu.Bv,
+      })
+      .then((result) => {
+        console.log(result);
+        console.log(result.data.token);
+        setToken(result.data.token);
+        localStorage.setItem("token", result.data.token);
+        Navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
