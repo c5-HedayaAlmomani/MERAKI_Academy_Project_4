@@ -1,11 +1,49 @@
 .totalPrice {
-margin-left: 4%;
-color: rgb(122, 1, 1);
-font-style: oblique;
-font-weight: 900;
+  color: rgb(122, 1, 1);
+  font-style: oblique;
+  font-weight: 900;
+}
+.myOrder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: oblique;
 }
 
 .comp {
-    margin-top: 5%;
+  margin-top: 5%;
 }
+.order {
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: 180px;
+  grid-template-areas: "img inf";
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #000000;
+  margin: 0.5%;
 
+  border-width: 7px;
+  background-color: rgb(233, 208, 208);
+}
+.imgo {
+  grid-area: img;
+  height: 100%;
+  width: 40%;
+  margin-left: 5%;
+}
+.infor {
+  display: grid;
+  grid-template-columns: 100%;
+}
+.infor h {
+  size: 10%;
+  font-weight: 800;
+}
+.infor button {
+  width: 25%;
+  margin: 1%;
+  background-color: #000000;
+  color: azure;
+  font-weight: 900;
+  border-radius: 10%;
+}

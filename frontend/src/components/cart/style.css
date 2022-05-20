@@ -1,51 +1,42 @@
-.cart_order {
+.cart {
     display: grid;
-    grid-template-columns: 60% auto;
-    grid-template-rows: 500px ;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 270px;
     grid-template-areas: "img inf";
     background-color: rgb(255, 255, 255);
- 
-}
-.myCart{
+    border: 1px solid #000000;
+    margin: 0.5%;
+  
+    border-width: 7px;
+    background-color: rgb(233, 230, 182);
+  }
+
+
+  .myCart {
     display: flex;
     align-items: center;
     justify-content: center;
     font-style: oblique;
+  }
+.information{
+   
+
+     display: grid;
+     grid-template-columns: auto;
+}
+.information h{
+    font-weight: 700;
 }
 
-.imgc {
-    grid-area: img;
-    height: 100%;
-    width: 60%;
-    
-}
-
-.information {
-    grid-area: inf;
-    size: 100px;
-    
-}
-.information h5{
-    color: rgb(0, 0, 0);
-    font-size: larger;
-    margin: 6%;
-    font-style: oblique;
+.information button{
+    width: 25%;
+    height: 80%;
+    background-color: #000000;
+    color: azure;
     font-weight: 900;
-    
-    
+    border-radius: 10%;
+   
 }
-.information input {
-    background-color: rgb(223, 226, 226);
-    width: 220px;
-    height: 30px;
+.information input{
+margin: 6px;
 }
-
-.information button {
-    color: rgb(255, 255, 255);
-    background-color: black;
-    border-radius: 9px;
-    height: 30px;
-    margin: 10px;
-    width: 100px;
-}
-

@@ -44,19 +44,19 @@ const Order = () => {
   //!==================
 
   return (
-    <div className="comp">
-      <h1 className="myCart"> MY ORDERS</h1>
+    <div className="compp">
+      <h1 className="myOrder"> MY ORDERS</h1>
 
       {orderArr.map((e) => {
         return (
-          <div className="cart_order">
-            <img className="imgc" src={e.cartId.productId.img} />
-            <div className="information">
-              <h1>{e.cartId.productId.title}</h1>
-              <h3>{e.cartId.productId.description}</h3>
-              <h3>{"Price: " + e.cartId.productId.price}</h3>
-              <h3>{"Color:  " + e.cartId.color}</h3>
-              <h3>{"Size:  " + e.cartId.size}</h3>
+          <div className="order">
+            <img className="imgo" src={e.cartId.productId.img} />
+            <div className="infor">
+              <h3>{e.cartId.productId.title}</h3>
+              <h>{e.cartId.productId.description}</h>
+              <h>{"Price: " + e.cartId.productId.price}</h>
+              <h>{"Color:  " + e.cartId.color}</h>
+              <h>{"Size:  " + e.cartId.size}</h>
               <button
                 onClick={() => {
                   deleteOrder(e._id);
