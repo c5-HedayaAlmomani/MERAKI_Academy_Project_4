@@ -10,20 +10,17 @@
   font-style: oblique;
 }
 
-.comp {
-  margin-top: 5%;
-}
 .order {
   display: grid;
   grid-template-columns: 40% auto;
   grid-template-rows: 180px;
   grid-template-areas: "img inf";
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #000000;
+
+  border: 1px solid rgb(0, 87, 145);
   margin: 0.5%;
 
   border-width: 7px;
-  background-color: rgb(233, 208, 208);
+  background-color: rgb(221, 235, 248);
 }
 .imgo {
   grid-area: img;
@@ -42,8 +39,9 @@
 .infor button {
   width: 25%;
   margin: 1%;
-  background-color: #000000;
+  background-color: rgb(65, 193, 253);
+  border: none;
   color: azure;
   font-weight: 900;
-  border-radius: 10%;
+  height: 60%;
 }

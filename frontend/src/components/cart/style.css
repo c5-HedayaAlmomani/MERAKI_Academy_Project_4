@@ -1,42 +1,37 @@
 .cart {
-    display: grid;
-    grid-template-columns: 40% auto;
-    grid-template-rows: 270px;
-    grid-template-areas: "img inf";
-    background-color: rgb(255, 255, 255);
-    border: 1px solid #000000;
-    margin: 0.5%;
-  
-    border-width: 7px;
-    background-color: rgb(233, 230, 182);
-  }
+  display: grid;
+  grid-template-columns: 40% auto;
+  grid-template-rows: 270px;
+  grid-template-areas: "img inf";
+  border: 1px solid rgb(0, 87, 145);
+  margin: 0.5%;
 
-
-  .myCart {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-style: oblique;
-  }
-.information{
-   
-
-     display: grid;
-     grid-template-columns: auto;
+  border-width: 7px;
+  background-color: rgb(221, 235, 248);
 }
-.information h{
-    font-weight: 700;
+.imgo {
+  grid-area: img;
+  height: 100%;
+  width: 40%;
+  margin-left: 5%;
 }
-
-.information button{
-    width: 25%;
-    height: 80%;
-    background-color: #000000;
-    color: azure;
-    font-weight: 900;
-    border-radius: 10%;
-   
+.information {
+  display: grid;
+  grid-template-columns: 100%;
 }
-.information input{
-margin: 6px;
+.information h {
+  size: 10%;
+  font-weight: 800;
+}
+.information button {
+  width: 25%;
+  margin: 1%;
+  background-color: rgb(65, 193, 253);
+  border: none;
+  color: azure;
+  font-weight: 900;
+  height: 60%;
+}
+.information input {
+  width: 60%;
 }

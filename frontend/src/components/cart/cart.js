@@ -102,7 +102,7 @@ const Cart = () => {
   //!=====================
 
   return (
-    <div>
+    <div className="compp">
       <h1 className="myCart"> MY CART</h1>
       {arrOfPoducts.map((e) => {
         return (
@@ -145,8 +145,6 @@ const Cart = () => {
           </div>
         );
       })}
-
-      <button>location</button>
     </div>
   );
 };

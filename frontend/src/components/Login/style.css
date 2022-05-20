@@ -1,0 +1,80 @@
+
+
+.div {
+  width: 100%;
+  margin-top: 0.5%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  background-color: rgb(65, 193, 253);
+
+  width: 100%;
+ 
+}
+.bordersignup h{
+    font-size: xx-large;
+    font-weight: 900;
+    color:rgb(65, 193, 253);
+    ;
+}
+.bordersignup legend{
+    font-size: xx-large;
+    font-weight: 900;
+    color:rgb(65, 193, 253);
+    
+
+}
+
+.bordersignup {
+    height: 70%;
+    margin: 1%;
+    width: 25%;
+    border: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5%;
+    background-color: rgb(247, 247, 247);
+    border: 30px solid rgb(247, 247, 247);
+    
+}
+
+.bordersignup button {
+    width: 90%;
+    margin-left: 10px;
+    height: 40px;
+   
+
+    
+    /* background-color: rgb(43, 140, 231); */
+    background-color: rgb(65, 162, 253);
+    color: azure;
+   border: none;
+   
+ 
+}
+.bordersignup  input {
+    width: 90%;
+    margin-left: 2%;
+    height: 40px;
+    border: none;
+    background-color: rgb(224, 224, 224);
+}
+.bordersignup label{
+    width: 90%;
+    margin-left: 2%;
+    font-weight: 900;
+    font-size: larger;
+}
+.message{
+
+font-weight: 900;
+color:  rgb(240, 36, 36);
+font-size: x-large;
+width: 90%;
+margin-left: 3%;
+height: 30px;
+
+}

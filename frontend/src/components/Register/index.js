@@ -14,8 +14,9 @@ const Register = () => {
     <div>
       <div className="div">
         <fieldset className="bordersignup">
-          <legend>SIGN_UP</legend>
-          <label>Enter your name</label>
+          {/* <legend>SIGN_UP</legend> */}
+          <h>SIGN_UP</h>
+          {/* <label>Enter your name</label> */}
           <br />
           <input
             placeholder="User Name"
@@ -26,7 +27,7 @@ const Register = () => {
           />
 
           <br />
-          <label>Enter your email</label>
+          {/* <label>Enter your email</label> */}
           <br />
           <input
             placeholder="Email"
@@ -36,7 +37,7 @@ const Register = () => {
             }}
           />
           <br />
-          <label>Enter your Password</label>
+          {/* <label>Enter your Password</label> */}
           <br />
           <input
             placeholder="Password"
@@ -47,7 +48,7 @@ const Register = () => {
           />
 
           <br />
-          <label>Register as a Admin</label>
+          {/* <label>Register as a Admin</label> */}
           <br />
           <input
             placeholder="Is Admin"
@@ -59,7 +60,7 @@ const Register = () => {
 
           <br />
           <button
-            className="button"
+           
             onClick={() => {
               axios
                 .post(

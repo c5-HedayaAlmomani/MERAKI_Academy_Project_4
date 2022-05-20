@@ -1,11 +1,9 @@
-
-// import "../Login/style.css";
+import "../Login/style.css";
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../App";
 import { useNavigate } from "react-router-dom";
 import LogGoogle from "../logGoogle/LogGoogle";
-// import GoogleLogin from "react-google-login";
 
 const Login = () => {
   const Navigate = useNavigate();
@@ -22,15 +20,15 @@ const Login = () => {
       });
       //! token
       token = result.data.token;
-      console.log(token)
+      console.log(token);
       setToken(result.data.token);
       localStorage.setItem("token", token);
       console.log(token);
-     
+
       setIsLoggedIn(true);
 
       setMessage(result.data.message);
-     Navigate("/")
+      Navigate("/");
     } catch (error) {
       setMessage(error.response.data.message);
       throw error;
@@ -40,8 +38,10 @@ const Login = () => {
   return (
     <div className="div">
       <fieldset className="bordersignup">
-      <legend>LOGIN</legend>
-        <label >Enter Your Email</label><br />
+        {/* <legend>LOGIN</legend> */}
+        <h>LOGIN</h>
+        {/* <label>Enter Your Email</label> */}
+        <br />
         <input
           type="email"
           placeholder="Email"
@@ -51,7 +51,8 @@ const Login = () => {
           }}
         />
         <br />
-        <label >Enter Your Password</label><br />
+        {/* <label>Enter Your Password</label> */}
+        <br />
         <input
           type="password"
           placeholder="Password"
@@ -67,7 +68,7 @@ const Login = () => {
         </button>
         <br />
         <p className="message">{message}</p>
-        < LogGoogle />
+        <LogGoogle />
         {/* <GoogleLogin /> */}
       </fieldset>
     </div>
