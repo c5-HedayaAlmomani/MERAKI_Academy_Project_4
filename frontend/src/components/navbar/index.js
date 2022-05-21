@@ -11,6 +11,7 @@ import Cart from "../cart/cart";
 import Order from "../Order/Orders";
 import Home from "../home/home";
 import Type from "../type/type";
+import Logout from "../logout/logout";
 const Navbar = () => {
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
@@ -22,7 +23,7 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <div className="section">
-          <Link to="/home" className="link">
+          <Link to="/" className="link">
             <i class="fa fa-home" aria-hidden="true"></i>
           </Link>
           <Link className="link" to="/cart">
@@ -62,6 +63,30 @@ const Navbar = () => {
               register
             </Link>
           )}
+
+
+{isLoggedIn && (
+            <Link to="/logout" className="link">
+              Logout
+            </Link>
+          )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
       <Routes>
@@ -72,7 +97,8 @@ const Navbar = () => {
         <Route path="oneProduct/:id" element={<OneProduct />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/logout" element={<Logout />}></Route>
         <Route path="/type/:type" element={<Type />}></Route>
       </Routes>
     </div>
