@@ -2,11 +2,11 @@ import "../Login/style.css";
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../App";
-import { useNavigate } from "react-router-dom";
 import LogGoogle from "../logGoogle/LogGoogle";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [message, setMessage] = useState();
@@ -28,7 +28,7 @@ const Login = () => {
       setIsLoggedIn(true);
 
       setMessage(result.data.message);
-      Navigate("/");
+      navigate("/");
     } catch (error) {
       setMessage(error.response.data.message);
       throw error;
@@ -36,41 +36,51 @@ const Login = () => {
   };
 
   return (
-    <div className="div">
-      <fieldset className="bordersignup">
-        {/* <legend>LOGIN</legend> */}
-        <h>LOGIN</h>
-        {/* <label>Enter Your Email</label> */}
-        <br />
-        <input
-          type="email"
-          placeholder="Email"
-          className="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <br />
-        {/* <label>Enter Your Password</label> */}
-        <br />
-        <input
-          type="password"
-          placeholder="Password"
-          className="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
+    <div>
+      <div className="div">
+        <fieldset className="bordersignup">
+          {/* <legend>LOGIN</legend> */}
+          <h>LOGIN</h>
+          {/* <label>Enter Your Email</label> */}
+          <br />
+          <input
+            type="email"
+            placeholder="Email"
+            className="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          <br />
+          {/* <label>Enter Your Password</label> */}
+          <br />
+          <input
+            type="password"
+            placeholder="Password"
+            className="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+          />
 
-        <br />
-        <button className="button_login" onClick={func}>
-          Login
-        </button>
-        <br />
-        <p className="message">{message}</p>
-        <LogGoogle />
-        {/* <GoogleLogin /> */}
-      </fieldset>
+          <br />
+          <button className="button_login" onClick={func}>
+            Login
+          </button>
+          <br />
+          <p className="message">{message}</p>
+          <LogGoogle />
+          <a
+            className="butR"
+            onClick={() => {
+              navigate("/register");
+            }}
+          >
+            regester
+          </a>
+        </fieldset>
+      </div>
+      <div className="extradiv"></div>
     </div>
   );
 };
