@@ -16,7 +16,7 @@
   grid-template-rows: 180px;
   grid-template-areas: "img inf";
 
-  border: 1px solid rgb(0, 87, 145);
+  box-shadow:0px 0px 15px 5px  rgb(167, 166, 166);
   margin: 0.5%;
 
   border-width: 7px;
@@ -44,4 +44,15 @@
   color: azure;
   font-weight: 900;
   height: 60%;
+  box-shadow:0px 0px 6px 3px  rgb(167, 166, 166);
+  transition: 0.7s ease;
+}
+.infor button:hover{
+
+  background-color: rgb(11, 13, 156);
+  transform: scale(1.2);
+
+
+
+
 }

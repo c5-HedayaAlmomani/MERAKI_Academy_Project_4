@@ -30,7 +30,7 @@ const LogGoogle = () => {
     <div>
       <GoogleLogin
         clientId="994328639474-ub85dkgodp4vrm5nvfaemiklfko5jpt9.apps.googleusercontent.com"
-        buttonText="Login"
+        buttonText="Log in with Google"
         onSuccess={responseGoogle}
         onFailure={responseGoogle}
         cookiePolicy={"single_host_origin"}

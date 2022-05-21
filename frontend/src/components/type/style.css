@@ -1,0 +1,30 @@
+.typeOnee {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 200px, 200px;
+  justify-content: center;
+  align-content: center;
+}
+.in {
+  justify-content: center;
+  font-size: larger;
+  font-weight: 800;
+  height: 40px;
+  text-align: center;
+  margin: -10px;
+  padding: -10px;
+}
+in h {
+  font-style: oblique;
+  justify-content: center;
+  font-size: 90%;
+  font-weight: 1000;
+  text-align-last: center;
+  width: 60%;
+}
+
+.imgT {
+  height: 70%;
+  width: 70%;
+}

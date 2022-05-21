@@ -10,6 +10,7 @@ import OneProduct from "../oneProduct/oneProduct";
 import Cart from "../cart/cart";
 import Order from "../Order/Orders";
 import Home from "../home/home";
+import Type from "../type/type";
 const Navbar = () => {
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const Navigate = useNavigate();
@@ -21,12 +22,13 @@ const Navbar = () => {
     <div>
       <div className="navbar">
         <div className="section">
-          <Link to="/" className="link">
-            Home
+          <Link to="/home" className="link">
+            <i class="fa fa-home" aria-hidden="true"></i>
           </Link>
-          <Link to="/product" className="link">
-            Product
+          <Link className="link" to="/cart">
+            <i class="fa fa-cart-plus" aria-hidden="true"></i>
           </Link>
+         
           <Link className="link" to="product/woman">
             Women
           </Link>
@@ -42,10 +44,7 @@ const Navbar = () => {
           <Link className="link" to="product/girls">
             Girls
           </Link>
-          {/* <Link className="link"  to="oneProduct/:id"> */}
-          <Link className="link" to="/cart">
-            cart
-          </Link>
+
           <Link className="link" to="/order">
             Order
           </Link>
@@ -68,15 +67,13 @@ const Navbar = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
         <Route path="/product" element={<Product />} />
-
         <Route path="/product/:category" element={<ProByCat />} />
         <Route path="oneProduct/:id" element={<OneProduct />} />
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/order" element={<Order />}></Route>
-
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/type/:type" element={<Type />}></Route>
       </Routes>
     </div>
   );

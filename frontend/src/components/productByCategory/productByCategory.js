@@ -41,9 +41,10 @@ const ProByCat = () => {
                 navigate(`/oneProduct/${e._id}`);
               }}
             />
+            
             <h>{e.title}</h>
 
-            <h>{e.description}</h>
+            {/* <h>{e.description}</h> */}
           </div>
         );
       })}

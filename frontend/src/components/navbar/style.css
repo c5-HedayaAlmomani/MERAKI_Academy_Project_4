@@ -18,6 +18,9 @@
   margin: 0px 20px;
 }
 
-.backGround{
+.backGround {
   width: 100%;
+}
+.link i {
+  font-size: x-large;
 }

@@ -109,18 +109,20 @@ const Cart = () => {
           <div className="cart">
             <img className="imgo" src={`${e.productId.img}` + ""} />
             <div className="information">
-              <h3>{e.productId.title}</h3>
+              <h>{e.productId.title}</h>
               <h>{"Description: " + e.productId.description}</h>
               <h>{"Color: " + e.color}</h>
               <h>{"Size:  " + e.size}</h>
               <h>{"Quantity:  " + e.quantity}</h>
+<div className="location">
               <h>Location: </h>
               <input
                 onChange={(e) => {
                   setAddress(e.target.value);
                 }}
               />
-
+              </div>
+<div className="final">
               <button
                 onClick={() => {
                   addOrder({
@@ -141,6 +143,7 @@ const Cart = () => {
               >
                 DELETE
               </button>
+              </div>
             </div>
           </div>
         );

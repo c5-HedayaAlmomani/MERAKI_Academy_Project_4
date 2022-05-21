@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../productByCategory/style.css";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../App";
 
 const Product = () => {
+  const navigate = useNavigate();
   let { token, setToken, isLoggedIn, setIsLoggedIn } = useContext(UserContext);
   const [products, setProducts] = useState([]);
 
@@ -32,10 +33,14 @@ const Product = () => {
     <div className="products">
       {products.map((e, i) => {
         return (
-          <div className="oneProduct">
+          <div
+            className="oneProduct"
+            onClick={() => {
+              navigate(`/oneProduct/${e._id}`);
+            }}
+          >
             <img className="allimg" src={`${e.img}` + ""} />
             <h>{e.title}</h>
-            <h>{e.description}</h>
           </div>
         );
       })}
