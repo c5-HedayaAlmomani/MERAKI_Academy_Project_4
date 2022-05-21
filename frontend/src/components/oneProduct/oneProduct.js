@@ -55,47 +55,51 @@ const OneProduct = () => {
   //!========================
 
   return (
-    <div >
+    <div className="tot">
       {newProduct.map((e) => {
         return (
-          <div className="onePro">
-           <div className="imgp"> <img  src={`${e.img}` + ""} /></div>
+          <div className="oneProo">
+            <img className="imgq" src={`${e.img}` + ""} />
             <div className="info">
               <h>{e.title}</h>
-              <h5>{"Description: "+e.description}</h5>
-              <h5>{e.type}</h5>
-              <h5>{e.price}</h5>
-              <h>Color : </h>
-              <select
-                onChange={function (e) {
-                  setColor(e.target.value);
-                }}
-              >
-                {e.color.map((element) => {
-                  return <option value={element + ""}>{element}</option>;
-                })}
-              </select>
-              <br />
+              <h>{"Description: " + e.description}</h>
+              <h>{e.type}</h>
+              <h>{e.price}</h>
+              <div className="kk">
+                <h>Color : </h>
+                <select
+                  onChange={function (e) {
+                    setColor(e.target.value);
+                  }}
+                >
+                  {e.color.map((element) => {
+                    return <option value={element + ""}>{element}</option>;
+                  })}
+                </select>
+              </div>
               {/* //!==================== */}
-              <h className="ll">{"Size :" }</h>
-              <select
-                onChange={function (e) {
-                  setSize(e.target.value);
-                }}
-              >
-                {e.size.map((element) => {
-                  return <option value={element + ""}>{element}</option>;
-                })}
-              </select>
-              <br />
+              <div className="kk">
+                <h>{"Size :"}</h>
+                <select
+                  className="ll"
+                  onChange={function (e) {
+                    setSize(e.target.value);
+                  }}
+                >
+                  {e.size.map((element) => {
+                    return <option value={element + ""}>{element}</option>;
+                  })}
+                </select>
+              </div>
               {/* //!   هون رح اسويها  */}
               <div className="quantity">
-              <button onClick={reduceQuantity}>-</button>
-              <>{"quantity: " + quantity}</>
-              <button onClick={addQuantity}>+</button>
+                <button onClick={reduceQuantity}>-</button>
+                <>{"quantity: " + quantity}</>
+                <button onClick={addQuantity}>+</button>
               </div>
-              <br />
-              <button className="button"
+
+              <button
+                className="button"
                 onClick={() =>
                   addToCart({
                     productId: e._id,

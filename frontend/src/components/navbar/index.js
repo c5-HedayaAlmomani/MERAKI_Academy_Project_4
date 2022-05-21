@@ -29,7 +29,7 @@ const Navbar = () => {
           <Link className="link" to="/cart">
             <i class="fa fa-cart-plus" aria-hidden="true"></i>
           </Link>
-         
+
           <Link className="link" to="product/woman">
             Women
           </Link>
@@ -64,29 +64,11 @@ const Navbar = () => {
             </Link>
           )}
 
-
-{isLoggedIn && (
+          {isLoggedIn && (
             <Link to="/logout" className="link">
               Logout
             </Link>
           )}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
       </div>
       <Routes>
