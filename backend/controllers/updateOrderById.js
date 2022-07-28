@@ -28,7 +28,4 @@ const updateOrderById = (req ,res)=>{
           });
 
       };
-
-
-
 module.exports = updateOrderById ;

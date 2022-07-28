@@ -28,5 +28,4 @@ res.json({success: false, message:"IsAdmin must be true or false"})
       }
     });
 };
-
 module.exports = register;

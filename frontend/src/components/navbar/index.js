@@ -50,7 +50,6 @@ const Navbar = () => {
             Order
           </Link>
 
-          {/* </Link> */}
         </div>
         <div className="section">
           {!isLoggedIn && (
